@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { loginSchema } from "@/lib/schema";
 import { useRouter } from "next/navigation";
+import { Camera, Heart, Star } from "lucide-react";
 
 interface LoginForm {
   email: string;
@@ -39,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-start h-screen gap-4 w-4/6 mx-auto">
+    <div className="flex items-start h-screen gap-4 w-4/6 mx-auto ">
       <div>
         <h1 className="text-3xl font-bold text-center">
           M-PESA Acquisition Portal
@@ -49,23 +50,29 @@ const Login = () => {
           efficient way to access the future of payments.
         </p>
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-col gap-4">
-            <div>
-              <Label htmlFor="email" className="text-lg font-semibold">
+          <div className="flex flex-col gap-6 p-6 rounded-lg shadow-md">
+            <div className="flex flex-col">
+              <Label
+                htmlFor="email"
+                className="text-lg font-semibold text-gray-700"
+              >
                 Your Email Address
               </Label>
               <Input
                 id="email"
                 name="email"
                 placeholder="Email"
-                className="w-96"
+                className="w-96 mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               {errors.email && (
                 <p className="text-red-600 text-sm mt-1">{errors.email}</p>
               )}
             </div>
-            <div>
-              <Label htmlFor="password" className="text-lg font-semibold">
+            <div className="flex flex-col">
+              <Label
+                htmlFor="password"
+                className="text-lg font-semibold text-gray-700"
+              >
                 Your Password
               </Label>
               <Input
@@ -73,7 +80,7 @@ const Login = () => {
                 name="password"
                 type="password"
                 placeholder="Password"
-                className="w-96"
+                className="w-96 mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               {errors.password && (
                 <p className="text-red-600 text-sm mt-1">{errors.password}</p>
@@ -90,7 +97,10 @@ const Login = () => {
       </div>
 
       <div className="flex items-center justify-center gap-8 mt-8">
-        <h1>Icons</h1>
+        <Camera className="h-10 w-10 text-blue-500" />
+        <Heart className="h-10 w-10 text-red-500" />
+        <Star className="h-10 w-10 text-yellow-500" />
+        <h1 className="text-2xl font-bold">This are just a mock Icons</h1>
       </div>
     </div>
   );
