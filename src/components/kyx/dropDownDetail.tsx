@@ -84,7 +84,7 @@ const DropDownDetail = ({ onNext }: DropDownDetailProps) => {
             <SelectContent>
               <SelectGroup>
                 <SelectLabel>Select Banks</SelectLabel>
-                <SelectItem value="apple">
+                <SelectItem value="Commercial Bank of ethiopia">
                   Commercial Bank of ethiopia
                 </SelectItem>
                 <SelectItem value="Awash Bank">Awash Bank</SelectItem>
